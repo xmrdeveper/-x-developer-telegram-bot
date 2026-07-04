@@ -1,7 +1,7 @@
 module.exports = {
   name: 'autoban',
-  description: 'Automatically ban severe offenders (placeholder).',
+  description: 'Automatically ban rule violators (placeholder).',
   execute: async (bot, ctx) => {
-    await ctx.reply('Auto-ban toggled (placeholder).');
+    await ctx.reply('Auto-ban toggle acknowledged (placeholder).');
   }
 };
