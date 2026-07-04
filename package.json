@@ -1,0 +1,16 @@
+{
+  "name": "x-developer-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot — placeholder commands added by Copilot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "telegraf": "^4.12.2",
+    "dotenv": "^16.0.3"
+  }
+}
