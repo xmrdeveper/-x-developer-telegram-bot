@@ -1,7 +1,7 @@
 module.exports = {
   name: 'antimedia',
-  description: 'Restrict selected media types (placeholder).',
+  description: 'Block all media messages (placeholder).',
   execute: async (bot, ctx) => {
-    await ctx.reply('Anti-media rules updated (placeholder).');
+    await ctx.reply('Anti-media toggled (placeholder).');
   }
 };

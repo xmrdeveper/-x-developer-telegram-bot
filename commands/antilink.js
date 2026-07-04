@@ -1,7 +1,7 @@
 module.exports = {
   name: 'antilink',
-  description: 'Block unauthorized links (placeholder).',
+  description: 'Block users from sending links (placeholder).',
   execute: async (bot, ctx) => {
-    await ctx.reply('Anti-link rule toggled (placeholder).');
+    await ctx.reply('Anti-link toggled (placeholder).');
   }
 };

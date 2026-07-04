@@ -1,7 +1,7 @@
 module.exports = {
   name: 'antifile',
-  description: 'Restrict file sharing (placeholder).',
+  description: 'Block all file uploads (placeholder).',
   execute: async (bot, ctx) => {
-    await ctx.reply('Anti-file rules updated (placeholder).');
+    await ctx.reply('Anti-file toggled (placeholder).');
   }
 };

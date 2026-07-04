@@ -1,6 +1,6 @@
 module.exports = {
   name: 'antilocation',
-  description: 'Restrict location sharing (placeholder).',
+  description: 'Block live and static locations (placeholder).',
   execute: async (bot, ctx) => {
     await ctx.reply('Anti-location toggled (placeholder).');
   }

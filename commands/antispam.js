@@ -1,6 +1,6 @@
 module.exports = {
   name: 'antispam',
-  description: 'Enable or disable anti-spam protection (placeholder).',
+  description: 'Prevent spam messages (placeholder).',
   execute: async (bot, ctx) => {
     await ctx.reply('Anti-spam toggled (placeholder).');
   }

@@ -1,6 +1,6 @@
 module.exports = {
   name: 'antiraid',
-  description: 'Protect against raid attacks (placeholder).',
+  description: 'Protect the group from raid attacks (placeholder).',
   execute: async (bot, ctx) => {
     await ctx.reply('Anti-raid toggled (placeholder).');
   }
