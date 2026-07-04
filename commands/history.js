@@ -1,5 +1,7 @@
 module.exports = {
   name: 'history',
-  description: 'Activity History',
-  execute: async (bot, ctx) => ctx.reply('History: (placeholder)')
+  description: 'View your download history - placeholder.',
+  execute: async (bot, ctx) => {
+    await ctx.reply('history: No downloads recorded (placeholder).');
+  }
 };
