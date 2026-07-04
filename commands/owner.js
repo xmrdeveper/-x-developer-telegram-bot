@@ -1,25 +1,18 @@
 module.exports = {
   name: 'owner',
-  description: 'Developer Information and pin a message',
+  description: 'Show the group owner.',
   execute: async (bot, ctx) => {
-    const ownerHandle = '@xmrdeveper';
     try {
-      // Inform about owner
-      await ctx.reply(`Owner: ${ownerHandle}`);
-
-      // Attempt to pin a specific message (ID 24605) in the current chat
       const chatId = ctx.chat && ctx.chat.id;
-      if (!chatId) {
-        await ctx.reply('Unable to determine chat ID to pin the message.');
-        return;
+      const admins = await ctx.telegram.getChatAdministrators(chatId);
+      const owner = admins.find(a => a.status === 'creator');
+      if (owner) {
+        await ctx.reply(`Owner: ${owner.user.first_name || ''}${owner.user.username ? ` (@${owner.user.username})` : ''}`);
+      } else {
+        await ctx.reply('Owner not found.');
       }
-
-      // Pinning requires the bot to be an admin with pin permissions in groups/supergroups
-      await ctx.telegram.pinChatMessage(chatId, 24605);
-      await ctx.reply('Message 24605 pinned (if the bot has permissions).');
     } catch (err) {
-      // Provide a helpful error message (common cause: missing admin/pin permissions)
-      await ctx.reply(`Failed to pin message 24605: ${err.message}`);
+      await ctx.reply(`Failed to get owner: ${err.message}`);
     }
   }
 };
