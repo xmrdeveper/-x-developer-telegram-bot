@@ -1,5 +1,7 @@
 module.exports = {
   name: 'importsettings',
-  description: 'Import group settings (placeholder).',
-  execute: async (bot, ctx) => ctx.reply('Settings imported (placeholder).')
+  description: 'Import saved settings.',
+  execute: async (bot, ctx) => {
+    await ctx.reply('Imported settings (placeholder).');
+  }
 };
