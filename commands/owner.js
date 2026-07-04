@@ -1,18 +1,11 @@
+const { requireOwner, requireGroup } = require('../utils/permissions');
+
 module.exports = {
   name: 'owner',
-  description: 'Show the group owner.',
+  description: 'Owner info and commands (owner-only).',
   execute: async (bot, ctx) => {
-    try {
-      const chatId = ctx.chat && ctx.chat.id;
-      const admins = await ctx.telegram.getChatAdministrators(chatId);
-      const owner = admins.find(a => a.status === 'creator');
-      if (owner) {
-        await ctx.reply(`Owner: ${owner.user.first_name || ''}${owner.user.username ? ` (@${owner.user.username})` : ''}`);
-      } else {
-        await ctx.reply('Owner not found.');
-      }
-    } catch (err) {
-      await ctx.reply(`Failed to get owner: ${err.message}`);
-    }
+    if (!(await requireOwner(ctx))) return;
+    const ownerId = process.env.OWNER_ID || 'Not set';
+    await ctx.reply(`👑 Bot Owner: ${ownerId}\n\nOwner-only commands:\n/shutdown - Stop the bot\n/restart - Restart the bot\n/stats - View bot stats\n/broadcast - Send message to all chats`);
   }
 };
