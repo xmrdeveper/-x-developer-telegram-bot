@@ -1,5 +1,7 @@
 module.exports = {
   name: 'ban',
-  description: 'Ban User',
-  execute: async (bot, ctx) => ctx.reply('User banned (placeholder)')
+  description: "Placeholder: Permanently ban a user from the group.",
+  execute: async (bot, ctx) => {
+    await ctx.reply('Placeholder: /ban is configured but destructive actions are disabled. Use OWNER_ID gating to enable.');
+  }
 };

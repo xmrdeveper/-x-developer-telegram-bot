@@ -1,5 +1,7 @@
 module.exports = {
   name: 'unban',
-  description: 'Unban User',
-  execute: async (bot, ctx) => ctx.reply('User unbanned (placeholder)')
+  description: "Placeholder: Remove a user's ban.",
+  execute: async (bot, ctx) => {
+    await ctx.reply('Placeholder: /unban is configured but destructive actions are disabled.');
+  }
 };
